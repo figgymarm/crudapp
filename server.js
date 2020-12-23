@@ -48,7 +48,10 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //>>>>>>>>>>>>>>>>>>>
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.render('index.ejs',
+  {
+    flowers: allFlowers
+  });
 });
 
 //>>>>>>>>>>>>>>>>>>>
