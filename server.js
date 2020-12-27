@@ -2,9 +2,11 @@
 //Dependencies
 //>>>>>>>>>>>>>>>>>>>
 const express = require('express');
-const methodOverride  = require('method-override');
+const app = express();
 const mongoose = require ('mongoose');
-const app = express ();
+const methodOverride  = require('method-override');
+const Flora = require('./models/flowers.js')
+const flowers = require('./models/seed.js')
 const db = mongoose.connection;
 require('dotenv').config()
 
@@ -21,11 +23,12 @@ const PORT = process.env.PORT || 3003;
 
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
-// May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
 
-// Error / success
+//>>>>>>>>>>>>>>
+// ERRORS
+//>>>>>>>>>>>>>>
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
@@ -47,11 +50,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //>>>>>>>>>>>>>>>>>>>
 // Routes
 //>>>>>>>>>>>>>>>>>>>
-app.get('/' , (req, res) => {
-  res.render('index.ejs',
-  {
-    flowers: allFlowers
-  });
+
+app.get('/flower/', (req, res) => {
+  res.render('index.ejs', {
+    flowers: flowers
+  })
 });
 
 //>>>>>>>>>>>>>>>>>>>

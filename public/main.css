@@ -1,0 +1,10 @@
+body{
+  background-image: url(https://static.vecteezy.com/system/resources/previews/000/476/596/large_2x/vector-abstract-hologram-gradient-background.jpg);
+  background-position: center;
+  background-size: auto;
+}
+#index-header{
+  display: flex;
+  justify-content: center;
+  font-family: 'Lily Script One', cursive;
+}
