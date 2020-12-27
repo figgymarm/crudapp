@@ -49,7 +49,19 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //>>>>>>>>>>>>>>>>>>>
 // Routes
 //>>>>>>>>>>>>>>>>>>>
-app.get('/flora/seed', (req, res) => {
+
+//index route
+app.get('/flora', (req, res) => {
+  Flora.find({}, (error, flowers) => {
+    res.render('index.ejs',
+    {
+      flowers:flowers
+    });
+  });
+});
+
+
+app.get('/seed', (req, res) => {
   Flora.create(
     [
       {
@@ -81,14 +93,6 @@ app.get('/flora/seed', (req, res) => {
 });
 
 
-app.get('/flora', (req, res) => {
-  Flora.find({}, (error, flowers) => {
-    res.render('index.ejs',
-    {
-      flowers:flowers
-    });
-  });
-});
 
 app.get('/:id', (req, res) => {
   Flora.findById(req.params.id, (error, flowerId) => {

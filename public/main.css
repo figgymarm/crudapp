@@ -1,16 +1,11 @@
 body{
-  background-image: url(https://static.vecteezy.com/system/resources/previews/000/476/596/large_2x/vector-abstract-hologram-gradient-background.jpg);
-  background-position: center;
-  background-size: auto;
+  background-image: url(/imgs/holo2.jpg);
+  background-size: stretch;
 }
 /* INDEX PAGE */
-#index-header{
-  display: flex;
-  justify-content: center;
-  font-family: 'League Script', cursive;
-  font-size: 100%;
-  color: white;
-  text-shadow:
+#header img{
+  width: 100%;
+  height: 90%;
 }
 #flowers{
   width: 100%;
@@ -31,4 +26,20 @@ body{
   box-shadow:
     0 0 20px 10px yellowgreen;
     0 0 25px 20px white;
+}
+#flower-item h2{
+  font-family: 'Lily Script', cursive;
+}
+#flower-item button{
+  border-radius: 15%;
+  background-color: coral;
+  border: 3px solid coral;
+  height: 50px;
+  width: 100px;
+}
+#flower-item a{
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-family: 'League Script', cursive;
 }

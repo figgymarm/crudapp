@@ -3,6 +3,7 @@
   <head>
     <!-- STYLES -->
     <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/imgs">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
@@ -11,16 +12,16 @@
     <!-- -->
   </head>
   <body>
-    <div class="xyz" id="index-header">
-      <h1>world florst</h1>
+    <div class="xyz" id="header">
+      <img src="/imgs/worldflorist.png" alt="logo">
     </div>
     <div class="" id="flowers">
       <% for (let flower of flowers) { %>
         <div class="" id="flower-item">
           <a href="/flora/<%=flower._id%>"><img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image"></a>
           <h2><%=flower.name%></h2>
-          <button type="button" name="button">
-          <a href="/flora/show">more info</a>
+          <button type="button" id="flower-btn">
+          <a href="/flora/<%=flower._id%>">more info</a>
         </div>
       <%}%>
   </body>
