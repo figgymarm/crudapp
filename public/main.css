@@ -3,8 +3,25 @@ body{
   background-position: center;
   background-size: auto;
 }
+/* INDEX PAGE */
 #index-header{
   display: flex;
   justify-content: center;
-  font-family: 'Lily Script One', cursive;
+  font-family: 'League Script', cursive;
+  font-size: 100%;
+  color: white;
+  text-shadow:
+}
+#flower-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  margin-left: 35%;
+}
+#flower-card img{
+  height: 30%;
+  width: 30%;
+  border-radius: 50%;
+  margin: 1.5rem;
 }

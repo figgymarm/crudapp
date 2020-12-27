@@ -4,6 +4,7 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
     <meta charset="utf-8">
     <title></title>
@@ -11,11 +12,11 @@
   </head>
   <body>
     <div class="xyz" id="index-header">
-      <h1>Enter Flora</h1>
+      <h1>world florist</h1>
     </div>
     <div class="" id="flower-card">
-      <% for (let i = 0; i < flowers.length; i++) { %>
-        <a href="/flower/<%=flowers[i]._id%>"><img src="<%=flowers[i].img%>" id="img-index" height=400px width=300px alt="flower image"></a>
+      <% for (let flower of flowers) { %>
+        <a href="/flower/<%=flower._id%>"><img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image"></a>
       <%}%>
     </div>
   </body>
