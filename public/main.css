@@ -12,16 +12,23 @@ body{
   color: white;
   text-shadow:
 }
-#flower-card{
+#flowers{
+  width: 100%;
+}
+#flower-item{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 75%;
-  margin-left: 35%;
+  align-items: center;
+  padding: 2%;
 }
-#flower-card img{
-  height: 30%;
-  width: 30%;
+#flower-item img{
+  border: 3px solid whitesmoke;
   border-radius: 50%;
-  margin: 1.5rem;
+  height: 35%;
+  width: 28%;
+  margin: 1rem;
+  margin-left: 35%;
+  box-shadow:
+    0 0 20px 10px yellowgreen;
+    0 0 25px 20px white;
 }

@@ -12,12 +12,16 @@
   </head>
   <body>
     <div class="xyz" id="index-header">
-      <h1>world florist</h1>
+      <h1>world florst</h1>
     </div>
-    <div class="" id="flower-card">
+    <div class="" id="flowers">
       <% for (let flower of flowers) { %>
-        <a href="/flower/<%=flower._id%>"><img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image"></a>
+        <div class="" id="flower-item">
+          <a href="/flora/<%=flower._id%>"><img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image"></a>
+          <h2><%=flower.name%></h2>
+          <button type="button" name="button">
+          <a href="/flora/show">more info</a>
+        </div>
       <%}%>
-    </div>
   </body>
 </html>

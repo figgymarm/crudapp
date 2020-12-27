@@ -8,6 +8,6 @@ const floraSchema = new mongoose.Schema ({
   price: {type: Number, required: true},
 });
 
-const Flower = mongoose.model('Flora', floraSchema);
+const Flora = mongoose.model('Flora', floraSchema);
 
-module.exports = Flower;
+module.exports = Flora;
