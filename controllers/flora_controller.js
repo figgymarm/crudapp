@@ -1,60 +1,11 @@
-//>>>>>>>>>>>>>>>>>>>
-//Dependencies
-//>>>>>>>>>>>>>>>>>>>
+
 const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const methodOverride  = require('method-override');
-const Flora = require('./models/flowers.js')
-const db = mongoose.connection;
-require('dotenv').config()
+const flora = express.Router();
+const Flora = require('../models/flowers.js');
 
-//>>>>>>>>>>>>>>>>>>>
-//Database
-//>>>>>>>>>>>>>>>>>>>
+// INDEX
 
-const MONGODB_URI = process.env.MONGODB_URI;
-//>>>>>>>>>>>>>>>>>>>
-//Port
-//>>>>>>>>>>>>>>>>>>>
-// Allow use of Heroku's port or your own local port, depending on the environment
-const PORT = process.env.PORT || 3003;
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
-);
-
-//>>>>>>>>>>>>>>
-// ERRORS
-//>>>>>>>>>>>>>>
-
-db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
-db.on('disconnected', () => console.log('mongo disconnected'));
-
-//>>>>>>>>>>>>>>>>>>
-//Middleware
-//>>>>>>>>>>>>>>>>>>
-
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(methodOverride('_method'));
-
-//>>>>>>>>>>>>>>>>>>>
-// Controllers
-//>>>>>>>>>>>>>>>>>>>
-
-// const floraController = require('./controllers/flora_controller.js')
-
-//>>>>>>>>>>>>>>>>>>>
-// Routes
-//>>>>>>>>>>>>>>>>>>>
-
-//HOME
-app.get('/', (req, res) => {
-  res.redirect('/flora')
-})
-
-app.get('/flora', (req, res) => {
+flora.get('/', (req, res) => {
   Flora.find({}, (error, flowers) => {
     res.render('index.ejs',
     {
@@ -63,8 +14,7 @@ app.get('/flora', (req, res) => {
   });
 });
 
-// SEED
-app.get('/seed', (req, res) => {
+flora.get('/seed', (req, res) => {
   Flora.create(
     [
       {
@@ -95,8 +45,8 @@ app.get('/seed', (req, res) => {
   )
 });
 
-// SHOW
-app.get('/flora/:id', (req, res) => {
+
+flora.get('/:id', (req, res) => {
   Flora.findById(req.params.id, (error, flowerId) => {
     res.render(
       'show.ejs',
@@ -107,10 +57,4 @@ app.get('/flora/:id', (req, res) => {
   });
 });
 
-
-//>>>>>>>>>>>>>>>>>>>
-//Listener
-//>>>>>>>>>>>>>>>>>>>
-app.listen(PORT, () => {
-console.log( '🍒🍋Listening on port🥝🍉:', PORT)
-});
+module.exports = flora
