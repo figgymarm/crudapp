@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/new.css">
+    <%- include ('./partials/head.ejs') %>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="new">
+      <h1>Add a Flower</h1>
+      <div id="new-item">
+        <form action="/flora" method="POST" id="new-form">
+          Name: <input type="text" id="name"/><br/>
+          Picture: <input type="link" id="img"/><br/>
+          Description: <input type="text" id="descr"/><br/>
+          Price: <input type="number" id="price"/><br/>
+          Quantity: <input type="number" id="qty"/><br/>
+          <input type="submit" id="new-submit" value="add to stock"/>
+        </form>
+        </div>
+        <a href="/flora"><button type="button" name="back" id="back-btn">back</button></a>
+    </div>
+  </body>
+</html>

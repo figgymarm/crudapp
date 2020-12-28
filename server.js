@@ -49,11 +49,12 @@ app.use(methodOverride('_method'));
 // Routes
 //>>>>>>>>>>>>>>>>>>>
 
-//HOME
+// HOME
 app.get('/', (req, res) => {
   res.redirect('/flora')
 })
 
+// INDEX
 app.get('/flora', (req, res) => {
   Flora.find({}, (error, flowers) => {
     res.render('index.ejs',
@@ -61,6 +62,18 @@ app.get('/flora', (req, res) => {
       flowers:flowers
     });
   });
+});
+
+// NEW
+app.get('/flora/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+// NEW ITEM REDIRECT
+app.post('/flora', (req, res) => {
+    Flora.create(req.body, (error, newItem) => {
+        res.redirect('/flora');
+    });
 });
 
 // SEED
@@ -110,6 +123,14 @@ app.get('/flora/:id', (req, res) => {
   });
 });
 
+// BUY
+app.put("/buy/:id", (req, res) => {
+  Flora.findById(req.params.id, (err, product) => {
+    Flora.updateOne(product, {$inc: {quantity: -1}}, {new:true}, (err, item)=>{})
+  });
+    // prompt('Your purchase was successful');
+    res.redirect('/flora');
+})
 
 //>>>>>>>>>>>>>>>>>>>
 //Listener

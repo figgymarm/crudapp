@@ -32,17 +32,6 @@ body{
 #flower-index h2{
   font-family: 'Lily Script', cursive;
 }
-@media (min-width: 400px){
-  .btns{
-  display: flex;
-  justify-content: space-between;
-  width: 13%;
-  }
-  .btns button, #submit-btn{
-    background-color: yellow;
-    border: 2px solid whitesmoke;
-  }
-}
 .btns{
 display: flex;
 flex-direction: column;

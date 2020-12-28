@@ -10,6 +10,10 @@
   </head>
   <body>
     <%- include ('./partials/header.ejs') %>
+    <div class="new-btn xyz-in" xyz="fade duration-10 ease-in">
+      <button type="button" id="new-btn">
+      <a href="/flora/new">add inventory</a>
+    </div>
     <div class="flower xyz-in" xyz="fade duration-20 ease-in" id="flowers">
       <% for (let flower of flowers) { %>
         <div class="" id="flower-index">
