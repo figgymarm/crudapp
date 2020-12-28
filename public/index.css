@@ -14,8 +14,8 @@ body{
 #new-btn{
   display: flex;
   flex-direction: column;
-  margin-left: 45%;
-  background-color: gainsboro;
+  margin-left: 44%;
+  background-color: #899e6c;
   border:2px solid white;
   box-shadow: 0 0 20px 5px white;
 }
