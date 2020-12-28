@@ -8,7 +8,7 @@ module.exports=[
   },
   {
     name:'Dahlia',
-    descr:'With an extensive history amongst the indigenous peoples as being highly useful medicinally as well as nutritionally, the Dahlia became the flower of Mexico in 1963. After Spainards discovered its usefulness in 1525 while conquesting through Mexico, it became a flower of intrique amongst European botanist and spread to France, Germany as well as Italy in the late 1700\'s.',
+    descr:'With an extensive history amongst the indigenous peoples as being highly useful medicinally as well as nutritionally, the Dahlia became the flower of Mexico in 1963. After Spainards discovered its usefulness in 1525 while conquesting through Mexico, it gained intrique amongst European botanist and spread to France, Germany as well as Italy in the late 1700\'s.',
     nation: 'Mexico',
     img: 'https://www.floresdelcorazon.com/wp-content/uploads/2018/05/sin-pie-3-min.jpg',
     price: '12',

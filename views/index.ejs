@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <!-- STYLES -->
+    <link rel="stylesheet" href="/index.css">
     <%- include ('./partials/head.ejs') %>
     <meta charset="utf-8">
     <title>florist</title>
@@ -11,11 +12,16 @@
     <%- include ('./partials/header.ejs') %>
     <div class="flower xyz-in" xyz="fade duration-20 ease-in" id="flowers">
       <% for (let flower of flowers) { %>
-        <div class="" id="flower-item">
-          <a href="/flora/<%=flower._id%>"><img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image"></a>
+        <div class="" id="flower-index">
+          <img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image">
           <h2><%=flower.name%></h2>
-          <button type="button" id="flower-btn">
-          <a href="/flora/<%=flower._id%>">more info</a>
+          <h5>$<%=flower.price%>/dozen</h5>
+          <div class="btns">
+            <button type="button" id="flower-btn">
+            <a href="/flora/<%=flower._id%>">more info</a>
+            <button type="button" id="flower-btn">
+            <a href="/flora/<%=flower._id%>">more info</a>
+          </div>
         </div>
       <%}%>
   </body>

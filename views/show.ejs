@@ -2,14 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <!-- STYLES -->
+    <link rel="stylesheet" href="/show.css">
     <%- include ('./partials/head.ejs') %>
     <meta charset="utf-8">
     <title>flower info</title>
   </head>
   <body>
     <%- include ('./partials/header.ejs') %>
-    <div class="" id="flower-item">
-
+    <div class="xyz-in" xyz="fade duration-10 ease-in" id="flower-show">
+        <h2><%=flower.name%></h2>
+        <img src="<%=flower.img%>" class="" alt="flower">
+        <p><%=flower.descr%></p>
+        <a href="/flora"><button type="button" id="back-btn">back to home</button></a>
     </div>
   </body>
 </html>

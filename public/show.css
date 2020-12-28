@@ -1,0 +1,46 @@
+body{
+  background-image: url(/imgs/holo2.jpg);
+  background-size: cover;
+}
+#header img{
+  margin-left: 13%;
+  width: 75%;
+}
+#flower-show{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 23%;
+  width: 55%;
+  height: 50%;
+}
+#flower-show h2{
+  font-family: 'Lily Script', cursive;
+  color: #515c53;
+  font size: 50px;
+}
+#flower-show img{
+  border-radius: 25px;
+  width: 70%;
+  height: 70%;
+}
+#flower-show p{
+  font-family: 'Dosis', sans-serif;
+  background-color: whitesmoke;
+  padding: 2%;
+  margin: 5%;
+  border: 2px double white;
+  box-shadow: 0 0 25px 20px white;
+  opacity: 90%;
+}
+#flower-show p:hover{
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+  background-color: #e1f2cb;
+  box-shadow: 0 0 25px 20px #c7ffc2;
+}
+#back-btn{
+  margin-top: 10%;
+  margin-bottom: 5%;
+  background-color: #515c53;
+}
