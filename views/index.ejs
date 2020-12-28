@@ -15,10 +15,15 @@
         <div class="" id="flower-index">
           <img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image">
           <h2><%=flower.name%></h2>
-          <h5>$<%=flower.price%>/dozen</h5>
+          <h6>$<%=flower.price%>/dozen</h6>
           <div class="btns">
-            <button type="button" id="flower-btn">
-            <a href="/flora/<%=flower._id%>">more info</a>
+            <% if (flower.qty > 0){ %>
+              <form class="buy-btn" action="/flora/buy/<%=flower._id%>?_method=PUT" method="POST">
+              <input type="submit" name="buy" id="submit-btn" value="buy">
+              </form>
+          <% } else {%>
+            <button type="button" id="out-btn">out of stock</button>
+          <%}%>
             <button type="button" id="flower-btn">
             <a href="/flora/<%=flower._id%>">more info</a>
           </div>

@@ -6,6 +6,7 @@ const floraSchema = new mongoose.Schema ({
   nation: {type: String, required: true},
   img: {type: String, required: true},
   price: {type: Number, required: true},
+  qty: {type: Number, required: true},
 });
 
 const Flora = mongoose.model('Flora', floraSchema);

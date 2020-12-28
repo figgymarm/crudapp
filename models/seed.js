@@ -5,6 +5,7 @@ module.exports=[
     nation: 'Holland',
     img: 'https://cdn.shopify.com/s/files/1/1902/7917/products/Eternal_Spring_Mix_1_715x880_crop_center.JPG?v=1541177198',
     price: '9',
+    qty: '10',
   },
   {
     name:'Dahlia',
@@ -12,6 +13,7 @@ module.exports=[
     nation: 'Mexico',
     img: 'https://www.floresdelcorazon.com/wp-content/uploads/2018/05/sin-pie-3-min.jpg',
     price: '12',
+    qty: '3',
   },
   {
     name:'Plum Blossom',
@@ -19,5 +21,6 @@ module.exports=[
     nation: 'China',
     img: 'https://blog.russianflora.com/wp-content/uploads/2019/06/Depositphotos_41188461_s-2019.jpg',
     price: '15',
+    qty: '8',
   },
 ]
