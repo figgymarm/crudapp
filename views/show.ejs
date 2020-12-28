@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- STYLES -->
+    <%- include ('./partials/head.ejs') %>
     <meta charset="utf-8">
-    <title></title>
+    <title>flower info</title>
   </head>
   <body>
-    <h1><%=flower.name%></h1>
+    <%- include ('./partials/header.ejs') %>
+    <div class="" id="flower-item">
+    <h2><%=flower.name%></h2>
     <p><%=flower.descr%></p>
+    </div>
   </body>
 </html>

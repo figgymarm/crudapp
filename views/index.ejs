@@ -2,21 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <!-- STYLES -->
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="/imgs">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core@0.1.1/dist/animxyz.min.css">
+    <%- include ('./partials/head.ejs') %>
     <meta charset="utf-8">
-    <title></title>
+    <title>florist</title>
     <!-- -->
   </head>
   <body>
-    <div class="logo xyz-in" xyz="fade big-100 in-rotate-left" id="header">
-      <img src="/imgs/worldflorist.png" alt="logo">
-    </div>
-    <div class="flower xyz-in" xyz="fade duration-10 ease-in" id="flowers">
+    <%- include ('./partials/header.ejs') %>
+    <div class="flower xyz-in" xyz="fade duration-20 ease-in" id="flowers">
       <% for (let flower of flowers) { %>
         <div class="" id="flower-item">
           <a href="/flora/<%=flower._id%>"><img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image"></a>
