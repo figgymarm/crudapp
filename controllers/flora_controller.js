@@ -3,15 +3,6 @@ const express = require('express');
 const flora = express.Router();
 const Flora = require('../models/flowers.js');
 
-// HOME
-flora.get('/test', (req, res) => {
-  res.send('Test route');
-})
-// 
-// flora.get('/', (req, res) => {
-//   res.redirect('/flora')
-// })
-
 
 // INDEX
 flora.get('/', (req, res) => {
