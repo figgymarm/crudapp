@@ -9,14 +9,10 @@ const db = mongoose.connection;
 require('dotenv').config()
 
 //>>>>>>>>>>>>>>>>>>>
-//Database
+//Database & PORT
 //>>>>>>>>>>>>>>>>>>>
 
 const MONGODB_URI = process.env.MONGODB_URI;
-//>>>>>>>>>>>>>>>>>>>
-//Port
-//>>>>>>>>>>>>>>>>>>>
-
 const PORT = process.env.PORT || 3003;
 mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );

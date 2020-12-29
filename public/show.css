@@ -39,7 +39,7 @@ body{
   background-color: #e1f2cb;
   box-shadow: 0 0 25px 20px #c7ffc2;
 }
-#back-btn{
+button{
   margin-top: 10%;
   margin-bottom: 5%;
   background-color: #515c53;

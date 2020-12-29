@@ -1,0 +1,42 @@
+/* *{
+  border: 1px solid white;
+} */
+body{
+  background-image: url(/imgs/holo2.jpg);
+  background-size: cover;
+}
+.new h1{
+  display: flex;
+  justify-content: center;
+  font-family: 'Lily Script', cursive;
+  font-size: 50px;
+}
+#new-item{
+  display: flex;
+  justify-content: center;
+}
+#new-item form{
+  display: flex;
+  flex-direction: column;
+  border:3px solid whitesmoke;
+  color:#515c53;
+  padding: 1%;
+  width: 40%;
+}
+#new-item #name, #img, #descr, #price, #qty{
+  margin: 2%;
+}
+#new-submit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 25%;
+  width: 50%;
+}
+#back-btn{
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  margin-left: 46%;
+  background-color: #515c53;
+}

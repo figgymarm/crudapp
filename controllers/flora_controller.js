@@ -26,6 +26,25 @@ flora.get('/:id', (req, res) => {
   });
 });
 
+// EDIT ITEM
+flora.get('/:id/edit', (req, res)=>{
+    Flora.findById(req.params.id, (err, storeItem)=>{
+        res.render(
+    		'edit.ejs',
+    		{
+    			item:storeItem
+    		}
+    	);
+    });
+});
+
+// UPDATE EDIT ITEM
+flora.put('/:id', (req, res)=>{
+    Flora.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedItem) =>
+    {
+        res.redirect('/flora');
+    });
+});
 
 // NEW
 flora.get('/new', (req, res) => {
