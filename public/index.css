@@ -1,6 +1,6 @@
-/* *{
+*{
   border: 1px solid white;
-} */
+}
 body{
   background-image: url(/imgs/holo2.jpg);
   background-size: cover;
@@ -24,8 +24,15 @@ body{
   color: black;
   font-family: 'Lily Script', cursive;
 }
+@media #flowers (min-width: 700px) {
+  #flowers{
+    display: flex;
+    width: 100%;
+  }
+}
 #flowers{
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 #flower-index{
   display: flex;
@@ -37,7 +44,7 @@ body{
   border: 3px solid whitesmoke;
   border-radius: 50%;
   height: 30%;
-  width: 25%;
+  width: 30%;
   margin: 1rem;
   box-shadow:
     0 0 25px 20px white;
