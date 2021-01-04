@@ -22,10 +22,47 @@ flora.get('/new', (req, res) => {
 
 // NEW ITEM REDIRECT
 flora.post('/', (req, res) => {
+    Flora.create(req.body, (error, newItem) => {
+        res.redirect('/flora');
+    });
+});
+
+
+// NEW
+flora.get('/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+// NEW ITEM REDIRECT
+flora.post('/', (req, res) => {
   // console.log(req.body);
   // res.send(req.body);
   Flora.create(req.body, (error, newItem) => {
       res.redirect('/flora');
+    });
+});
+
+// EDIT ITEM
+flora.get('/:id/edit', (req, res)=>{
+    Flora.findById(req.params.id, (err, storeItem)=>{
+        res.render(
+    		'edit.ejs',
+    		{
+    			item:storeItem
+    		}
+    	);
+    });
+});
+
+// UPDATE EDIT ITEM
+flora.put('/:id', (req, res)=>{
+    Flora.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {new:true},
+      (error, updatedItem) =>
+    {
+        res.redirect('/flora');
     });
 });
 
@@ -77,41 +114,6 @@ flora.get('/:id', (req, res) => {
   });
 });
 
-// EDIT ITEM
-flora.get('/:id/edit', (req, res)=>{
-    Flora.findById(req.params.id, (err, storeItem)=>{
-        res.render(
-    		'edit.ejs',
-    		{
-    			item:storeItem
-    		}
-    	);
-    });
-});
-
-// UPDATE EDIT ITEM
-flora.put('/:id', (req, res)=>{
-    Flora.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {new:true},
-      (error, updatedItem) =>
-    {
-        res.redirect('/flora');
-    });
-});
-
-// NEW
-flora.get('/new', (req, res) => {
-    res.render('new.ejs');
-});
-
-// NEW ITEM REDIRECT
-flora.post('/', (req, res) => {
-    Flora.create(req.body, (error, newItem) => {
-        res.redirect('/flora');
-    });
-});
 
 // BUY
 flora.put("/buy/:id", (req, res) => {
