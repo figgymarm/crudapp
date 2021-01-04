@@ -14,6 +14,18 @@ flora.get('/', (req, res) => {
   });
 });
 
+// NEW
+flora.get('/new', (req, res) => {
+    res.render('new.ejs');
+});
+
+// NEW ITEM REDIRECT
+flora.post('/', (req, res) => {
+    Flora.create(req.body, (error, newItem) => {
+        res.redirect('/flora');
+    });
+});
+
 // SHOW
 flora.get('/:id', (req, res) => {
   Flora.findById(req.params.id, (error, flowerId) => {
