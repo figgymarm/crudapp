@@ -11,11 +11,12 @@
       <h1>Edit Flower</h1>
       <div id="new-item">
         <form action="/flora/<%=item.id%>?_method=PUT" method="POST" id="edit-form">
-          Name: <input type="text" id="name" value="<%=item.name%>"><br/>
-          Picture: <input type="link" id="img" value="<%=item.img%>"><br/>
-          Description: <input type="text" id="descr" value="<%=item.descr%>"><br/>
-          Price: <input type="number" id="price" value="<%=item.price%>"><br/>
-          Quantity: <input type="number" id="qty" value="<%=item.qty%>"><br/>
+          Name: <input type="text" name="name" value="<%=item.name%>"><br/>
+          Description: <input type="text" name="descr" value="<%=item.descr%>"><br/>
+          Nation: <input type="text" name="nation" value="<%=item.nation%>">
+          Picture: <input type="link" name="img" value="<%=item.img%>"><br/>
+          Price: <input type="number" name="price" value="<%=item.price%>"><br/>
+          Quantity: <input type="number" name="qty" value="<%=item.qty%>"><br/>
           <input type="submit" id="new-submit" value="submit edit"/>
         </form>
         </div>
