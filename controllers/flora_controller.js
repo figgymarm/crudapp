@@ -27,21 +27,6 @@ flora.post('/', (req, res) => {
     });
 });
 
-
-// NEW
-flora.get('/new', (req, res) => {
-    res.render('new.ejs');
-});
-
-// NEW ITEM REDIRECT
-flora.post('/', (req, res) => {
-  // console.log(req.body);
-  // res.send(req.body);
-  Flora.create(req.body, (error, newItem) => {
-      res.redirect('/flora');
-    });
-});
-
 // EDIT ITEM
 flora.get('/:id/edit', (req, res)=>{
     Flora.findById(req.params.id, (err, storeItem)=>{
@@ -118,10 +103,26 @@ flora.get('/:id', (req, res) => {
 // BUY
 flora.put("/buy/:id", (req, res) => {
   Flora.findById(req.params.id, (err, product) => {
-    Flora.updateOne(product, {$inc: {quantity: -1}}, {new:true}, (err, item)=>{})
+    Flora.updateOne(product, {$inc: {quantity: -1}}, {new:true}, (err, item)=> {})
   });
-    // prompt('Your purchase was successful');
     res.redirect('/flora');
 })
+
+// DELETE
+flora.delete('/:id', (req, res) => {
+  Flora.findByIdAndRemove(req.params.id, (err, deletedFlower) => {
+    res.redirect('/flora')
+  });
+});
+
+
+// Drop DB Route
+flora.get(
+  '/dropdatabase/cannotundo/areyoursure/reallysure',
+  (req, res) => {
+    Flora.collection.drop()
+    res.send('You did it! You dropped the database!')
+  });
+
 
 module.exports = flora

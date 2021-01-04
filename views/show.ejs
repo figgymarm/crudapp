@@ -14,8 +14,11 @@
         <img src="<%=flower.img%>" class="" alt="flower">
         <p><%=flower.descr%></p>
         <div class="xyz-in" id="btn">
-          <a href="/flora"><button type="button" id="back-btn">back to home</button></a>
-          <a href="/flora/<%=flower.id%>/edit"><button type="button" id="edit-btn">edit product</button></a>
+          <a href="/flora"><button type="button" id="btn">back to home</button></a>
+          <a href="/flora/<%=flower.id%>/edit"><button type="button" id="btn">edit product</button></a>
+          <form action="/flora/<%=flower._id%>?_method=DELETE" id="delete-btn" method="POST">
+          <input type="submit" value="DELETE"/>
+          </form>
         </div>
     </div>
   </body>
