@@ -3,6 +3,7 @@ const express = require('express');
 const flora = express.Router();
 const Flora = require('../models/flowers.js');
 
+flora.use(express.urlencoded({ extended: false }));
 
 // INDEX
 flora.get('/', (req, res) => {
@@ -21,9 +22,11 @@ flora.get('/new', (req, res) => {
 
 // NEW ITEM REDIRECT
 flora.post('/', (req, res) => {
-    Flora.create(req.body, (error, newItem) => {
-        res.redirect('/flora');
-    });
+  console.log(req.body);
+  res.send(req.body);
+    // Flora.create(req.body, (error, newItem) => {
+    //   res.redirect('/flora');
+    // });
 });
 
 // SHOW
@@ -52,7 +55,11 @@ flora.get('/:id/edit', (req, res)=>{
 
 // UPDATE EDIT ITEM
 flora.put('/:id', (req, res)=>{
-    Flora.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedItem) =>
+    Flora.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {new:true},
+      (error, updatedItem) =>
     {
         res.redirect('/flora');
     });
