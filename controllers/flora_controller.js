@@ -3,7 +3,13 @@ const express = require('express');
 const flora = express.Router();
 const Flora = require('../models/flowers.js');
 
-flora.use(express.urlencoded({ extended: false }));
+// BUY
+flora.put("/buy/:id", (req, res) => {
+  Flora.findById(req.params.id, (err, product) => {
+    Flora.updateOne(product, {$inc: {qty: -1}}, {new:true}, (err, item)=> {})
+  });
+    res.redirect('/flora');
+})
 
 // INDEX
 flora.get('/', (req, res) => {
@@ -99,14 +105,6 @@ flora.get('/:id', (req, res) => {
   });
 });
 
-
-// BUY
-flora.put("/buy/:id", (req, res) => {
-  Flora.findById(req.params.id, (err, product) => {
-    Flora.updateOne(product, {$inc: {quantity: -1}}, {new:true}, (err, item)=> {})
-  });
-    res.redirect('/flora');
-})
 
 // DELETE
 flora.delete('/:id', (req, res) => {
