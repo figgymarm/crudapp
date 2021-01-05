@@ -8,8 +8,11 @@ flora.put("/buy/:id", (req, res) => {
   Flora.findById(req.params.id, (err, product) => {
     Flora.updateOne(product, {$inc: {qty: -1}}, {new:true}, (err, item)=> {})
   });
-    res.redirect('/flora');
-})
+Flora.find({}, (error, flowers) => {
+  res.render('index.ejs')
+});
+  res.redirect('/flora')
+});
 
 // INDEX
 flora.get('/', (req, res) => {

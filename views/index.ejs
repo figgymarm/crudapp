@@ -20,6 +20,7 @@
           <img src="<%=flower.img%>" id="img-index" height=400px width=300px alt="flower image">
           <h2><%=flower.name%></h2>
           <h6>$<%=flower.price%>/dozen</h6>
+          <h6>There are currently <%=flower.qty%> in stock.</h6>
           <div class="btns">
             <% if (flower.qty > 0){ %>
               <form class="buy-btn" action="/flora/buy/<%=flower._id%>?_method=PUT" method="POST">
