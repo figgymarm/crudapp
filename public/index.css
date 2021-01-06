@@ -24,10 +24,6 @@ body{
   color: black;
   font-family: 'Lily Script', cursive;
 }
-#flowers{
-  display: flex;
-  flex-direction: column;
-}
 @media (min-width: 700px) {
   #flowers{
     display: flex;
@@ -35,6 +31,10 @@ body{
     justify-content: space-between;
     width: 100%;
   }
+}
+#flowers{
+  display: flex;
+  flex-direction: column;
 }
 #flower-index{
   display: flex;
