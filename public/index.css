@@ -2,7 +2,7 @@
   border: 1px solid white;
 } */
 body{
-  background-image: url(/imgs/holo2.jpg);
+  background-image: url(/imgs/whiteflora.jpeg);
   background-size: cover;
   height: 800px;
 }
@@ -24,6 +24,10 @@ body{
   color: black;
   font-family: 'Lily Script', cursive;
 }
+#flowers{
+  display: flex;
+  flex-direction: column;
+}
 @media (min-width: 700px) {
   #flowers{
     display: flex;
@@ -31,10 +35,6 @@ body{
     justify-content: space-between;
     width: 100%;
   }
-}
-#flowers{
-  display: flex;
-  flex-direction: column;
 }
 #flower-index{
   display: flex;
